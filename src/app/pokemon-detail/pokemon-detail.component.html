@@ -1,0 +1,71 @@
+<section>
+  <button (click)="goBack()" class="pokemon__back-button">Back</button>
+  <div class="pokemon">
+    <h1>{{name | uppercase}} #{{id}} (order-number:{{order}})</h1>
+    <div class="pokemon__row">
+      <div class="pokemon__leftpart">
+        <img src="{{front_default}}" alt="pokemon">
+      </div>
+      <div class="pokemon__rightpart">
+        <div class="rightpart__details">
+          <div>
+            <p class="details__text">Abilities:</p>
+            <div class="details__abilities">
+              <p *ngFor="let abilities of abilities">{{abilities.ability.name}}</p>
+            </div>
+          </div>
+          <div>
+            <p class="details__text">Type:</p>
+            <div class="details__types">
+              <p *ngFor="let types of types" class="types__{{types.type.name}}">{{types.type.name}}</p>
+            </div>
+          </div>
+          <div class="grid-container">
+            <div class="grid-item item1 details__text">Stats:</div>
+            <div *ngFor="let stat of stats" class="grid-item item2">
+              <p>{{stat.stat.name}}</p>
+            </div>
+            <div *ngFor="let stat of stats" class="grid-item item3">
+              <p>{{stat.base_stat}}</p>
+            </div>
+            <div class="grid-item item4">
+              <p>Total</p>
+            </div>
+            <div class="grid-item item5">
+              <p>5</p>
+            </div>
+          </div>
+          <div>
+            <p class="details__text">Possible evolutions:</p>
+            <div class="details__evolution">
+              <div>
+                <img src="{{firstEvolImg}}" alt="Pokemon">
+                <p>{{firstEvolName}}</p>
+              </div>
+              <div *ngIf="secondEvolName">
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </div>
+              <div *ngIf="secondEvolName">
+                <img src="{{secondEvolImg}}" alt="Pokemon">
+                <p>{{secondEvolName}}</p>
+              </div>
+              <div *ngIf="thirdEvolName">
+                <i class="fas fa-long-arrow-alt-right"></i>
+              </div>
+              <div *ngIf="thirdEvolName">
+                <img src="{{thirdEvolImg}}" alt="Pokemon">
+                <p>{{thirdEvolName}}</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="details__text">Moves:</p>
+            <div class="details__moves">
+              <p *ngFor="let move of moves">{{move.move.name}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

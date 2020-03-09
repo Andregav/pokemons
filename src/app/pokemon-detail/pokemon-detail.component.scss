@@ -1,0 +1,348 @@
+$primary-color: #b3a125;
+
+.pokemon {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+
+  &__back-button {
+    margin-top: 22px;
+    margin-left: 60px;
+    margin-bottom: 22px;
+    width: 70px;
+    padding: 5px 0px;
+    padding-right: 10px;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 4px;
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #fff;
+    cursor: pointer;
+    text-align: right;
+  }
+
+  &__back-button:before {
+    content: ' \276E';
+    margin-right: 6px;
+  }
+
+  &__back-button:hover::before {
+    margin-right: 10px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  &__row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+    align-items: center;
+  }
+
+  &__leftpart,
+  &__rightpart {
+    width: 50%;
+  }
+
+  &__leftpart {
+    text-align: center;
+
+    img {
+      width: 40%;
+      background-color: #d7d7db;
+      border-radius: 5px;
+    }
+  }
+
+  &__rightpart {
+    h3 {
+      margin-top: 0;
+    }
+
+    h3:first-letter {
+      text-transform: uppercase;
+    }
+
+    .rightpart {
+      &__details {
+        background-color: #5595ff;
+        padding: 1px 20px;
+        border-radius: 5px;
+
+        .details {
+          &__text {
+            color: #fff;
+            font-family: Roboto;
+            margin-bottom: 0;
+          }
+
+          &__abilities,
+          &__types,
+          &__evolution,
+          &__moves {
+            display: flex;
+            flex-wrap: wrap;
+
+
+            p {
+              color: #212121;
+              margin: 0;
+              margin-right: 20px;
+            }
+
+            p:first-letter {
+              text-transform: uppercase;
+            }
+          }
+
+          &__types {
+
+            %mix-typetext {
+              padding: 3px 7px;
+              border-radius: 5px;
+              color: #fff;
+            }
+
+            .types {
+              &__poison {
+                background-color: #b97fc9;
+                @extend %mix-typetext;
+              }
+
+              &__grass {
+                @extend %mix-typetext;
+                background-color: #9bcc50;
+              }
+
+              &__bug {
+                @extend %mix-typetext;
+                background-color: #729f3f;
+              }
+
+              &__fire {
+                @extend %mix-typetext;
+                background-color: #fd7d24;
+              }
+
+              &__flying {
+                @extend %mix-typetext;
+                background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+              }
+
+              &__ice {
+                @extend %mix-typetext;
+                background-color: #51c4e7;
+              }
+
+              &__rock {
+                @extend %mix-typetext;
+                background-color: #a38c21;
+              }
+
+              &__psychic {
+                @extend %mix-typetext;
+                background-color: #f366b9;
+              }
+
+              &__ground {
+                @extend %mix-typetext;
+                background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+              }
+
+              &__water {
+                @extend %mix-typetext;
+                background-color: #4592c4;
+              }
+
+              &__normal {
+                @extend %mix-typetext;
+                background-color: #a4acaf;
+              }
+
+              &__electric {
+                @extend %mix-typetext;
+                background-color: #eed535;
+              }
+
+              &__fighting {
+                @extend %mix-typetext;
+                background-color: #d56723;
+              }
+
+              &__fairy {
+                @extend %mix-typetext;
+                background-color: #fdb9e9;
+              }
+
+              &__steel {
+                @extend %mix-typetext;
+                background-color: #9eb7b8;
+              }
+            }
+          }
+
+          &__evolution {
+            margin-top: 10px;
+            justify-content: space-around;
+            align-items: center;
+
+            img {
+              border: 7px solid #fff;
+              border-radius: 50%;
+              background-color: #fff;
+            }
+
+            p {
+              margin: 0;
+              text-align: center;
+              font-family: Roboto;
+              font-weight: 600;
+            }
+          }
+
+          &__moves {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            max-height: 500px;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.grid-container {
+  display: grid;
+  margin-top: 15px;
+}
+
+.item1 {
+  grid-column: 1 / span 7;
+  grid-row: 1;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.item2,
+.item4 {
+  grid-row: 2;
+  border: 1px solid #ededf0;
+
+  p {
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+.item2:first-letter {
+  text-transform: uppercase;
+}
+
+.item3,
+.item5 {
+  grid-row: 3;
+  border: 1px solid #ededf0;
+  border-top: none;
+
+  p {
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}
+
+@media only screen and (max-width: 1112px) {
+  .pokemon {
+    width: 100%;
+
+    &__row {
+      flex-direction: column;
+    }
+
+    &__leftpart {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .pokemon {
+
+    &__leftpart,
+    &__rightpart {
+      width: 70%;
+    }
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  .pokemon {
+
+    &__leftpart,
+    &__rightpart {
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  .pokemon {
+    &__rightpart {
+      .rightpart {
+        &__details {
+          .details {
+            &__moves {
+              max-height: 750px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .pokemon {
+    &__rightpart {
+      .rightpart {
+        &__details {
+          .details {
+            &__moves {
+              max-height: 1000px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .pokemon {
+    &__rightpart {
+      .rightpart {
+        &__details {
+          padding: 1px 5px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  .item2 p,
+  .item4 p {
+    font-size: 12px;
+  }
+}

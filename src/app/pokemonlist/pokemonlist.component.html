@@ -1,0 +1,17 @@
+<section class="list-wrap">
+  <button (click)="goBack()" class="list__back-button">Back</button>
+  <div class="list">
+    <h1 class="list__title">Have you seen these pokemons?</h1>
+    <p class="list__text">Click on one</p>
+    <div class="list__items">
+      <div *ngFor="let pokemon of items" class="list__item" routerLink="/list/{{pokemon.name}}">
+        <img src="{{pokemon.sprites.front_default}}" alt="pokemon">
+        <p>{{pokemon.name}}</p>
+      </div>
+    </div>
+    <button class="list__load-button" (click)="loadMore()">
+      <span *ngIf="isLoading">Loading...</span>
+      <span *ngIf="!isLoading">Load more</span>
+    </button>
+  </div>
+</section>

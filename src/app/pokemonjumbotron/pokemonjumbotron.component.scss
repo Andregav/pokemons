@@ -1,0 +1,147 @@
+$primary-color: #b3a125;
+
+.jumbotron-wrap {
+  height: 80vh;
+}
+
+.jumbotron {
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  height: 100%;
+
+  &-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .top {
+      &__left {
+        width: 50%;
+        margin-right: 10%;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 30px;
+    font-family: Luckiest Guy;
+    font-style: normal;
+    font-size: 42px;
+    line-height: 45px;
+    color: #3b4cca;
+    letter-spacing: 3px;
+  }
+
+  &__img {
+    width: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    font-family: Roboto;
+  }
+
+  &__arrow {
+    text-align: center;
+
+    .arrow {
+      &__text {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-family: Patua One;
+      }
+
+      &__sign {
+        background-color: $primary-color;
+        display: inline-block;
+        padding: 10px 12px;
+        border-radius: 50%;
+        box-shadow: 0px 4px 10px #b3a125;
+        cursor: pointer;
+
+        i {
+          color: #fff;
+        }
+      }
+
+      &__sign:hover {
+        box-shadow: none;
+        transform: translate(0px, 3px);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1112px) {
+  .jumbotron {
+    width: 100%;
+
+    &-top {
+      flex-direction: column;
+      justify-content: space-around;
+
+      .top {
+        &__left {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__title {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 812px) {
+  .jumbotron {
+    &-wrap {
+      height: 90vh;
+    }
+
+    &-top {
+      .top {
+        &__left {
+          width: 90%;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 36px;
+      line-height: 36px;
+    }
+  }
+}
+
+@media only screen and (max-width: 667px) {
+  .jumbotron {
+    &__title {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .jumbotron {
+    &__title {
+      padding-top: 5px;
+    }
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .jumbotron {
+    &-wrap {
+      height: 88vh;
+    }
+  }
+}
